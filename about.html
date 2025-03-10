@@ -166,7 +166,7 @@
 }
     </style>
 </head>
-<body>
+<body onclick="closeOverlay(event)">
 
     <!-- Top Bar -->
     <div class="top-bar">
@@ -212,11 +212,11 @@ function toggleOverlay(event) {
 hamburger.addEventListener('click', toggleOverlay);
 
 // Close overlay when clicking outside of it
-document.addEventListener('click', (event) => {
+function closeOverlay(event) {
     if (overlay.classList.contains('active') && !overlay.contains(event.target) && !hamburger.contains(event.target)) {
         overlay.classList.remove('active');
     }
-});
+}
 
 // Stop propagation on menu links to prevent closing when clicking them
 document.querySelectorAll('.overlay a').forEach(link => {

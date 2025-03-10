@@ -229,6 +229,21 @@
                 link.style.color = 'white';
             });
         });
+
+        // Disable long-press context menu on images
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
+        });
+
+        // Disable long-press save on mobile
+        document.addEventListener('touchstart', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
         // Function to apply random colors to each letter in the "color" link
 const colorLink = document.getElementById('colorLink');
 const colors = ['green', 'blue', 'orange', 'pink', 'purple'];

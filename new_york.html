@@ -1,473 +1,999 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <link rel="icon" type="image/webp" href="ie favicon.webp"/>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>dylan permuy</title>
+    <head>
+        <link rel="icon" type="image/webp" href="ie favicon.webp?v=1.0" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>dylan permuy</title>
+        <link rel="preload" as="image" href="darkroom/1.webp?v=1.0" imagesrcset="darkroom/1.webp?v=1.0" imagesizes="100vw" />
 
-    <!-- Include the Google Font link for pacquarda Bastarda 9 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&display=swap" rel="stylesheet">
+        <!-- Include the Google Font link for Jacquarda Bastarda 9 -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&display=swap"
+            rel="stylesheet"
+        />
 
-    <style>
-        /* Custom cursor */
-        body {
-            cursor: url('data:image/x-icon;base64,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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAqKiqgoKBnZ2chISEsLCwAAAAAAAAAAABAP0EpJysAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABNTU1CQkJEREQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/////////////wP///8B///+AD///gAP//wAD//8AAf/+AAH//gAB//4AAf/8AAP//AAH/wAAD/4AAA/8AAAf+AAAP/AAAH/wAAH/4AAB/+AAA//kAAf//AAH//wAB//4AA//+AAf//AAH//gA///wcf//8f//////////////w=='), auto;
-        }
-        body {
-            background-color: black;
-            color: white;
-            font-family: 'Jacquarda Bastarda 9', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            overflow: hidden;
-        }
+        <style>
+            .hidden {
+    visibility: hidden;
+}
+            /* Prevent horizontal scrolling for the entire page */
+            html, body {
+                overflow-x: hidden !important;
+                width: 100vw;
+                max-width: 100vw;
+                margin: 0;
+                padding: 0;
+}
+            /* Custom cursor */
+            body {
+                cursor:
+                    url("data:image/x-icon;base64,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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAqKiqgoKBnZ2chISEsLCwAAAAAAAAAAABAP0EpJysAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABNTU1CQkJEREQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/////////////wP///8B///+AD///gAP//wAD//8AAf/+AAH//gAB//4AAf/8AAP//AAH/wAAD/4AAA/8AAAf+AAAP/AAAH/wAAH/4AAB/+AAA//kAAf//AAH//wAB//4AA//+AAf//AAH//gA///wcf//8f//////////////w=="),
+                    auto;
+            }
+            body {
+                background-color: #000000 !important;
+                color: white;
+                font-family: "Jacquarda Bastarda 9", sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                min-height: 100dvh; /* Ensures proper height with dynamic viewport */
+                padding-bottom: calc(env(safe-area-inset-bottom) + 20px); /* Space for bottom bar */
+                overflow-x: hidden;
+                overflow-y: auto;
+            }
 
-        /* Top Bar for Desktop and Mobile */
-        .top-bar {
-            display: flex;
-            height: 70px;
-            background-color: black;
-            color: white;
-            width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-            box-sizing: border-box;
-            z-index: 1000;
-            transition: top 0.3s;
-        }
+            /* Smooth Background Color Transition */
+            body {
+                transition: background-color 0.5s ease-in-out;
+            }
 
-        .top-bar a {
-            font-size: 1.2rem;
-            color: white;
-            text-decoration: none;
-        }
+            /* Top Bar for Desktop and Mobile */
+            .top-bar {
+                display: flex;
+                height: 70px;
+                background-color: #000000 !important;
+                color: black;
+                width: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 20px;
+                box-sizing: border-box;
+                z-index: 1000;
+                transition: top 0.3s;
+            }
 
-        .top-bar .hamburger {
-            font-size: 2rem;
-            background: none;
-            border: none;
-            color: white;
-            cursor: pointer;
-        }
+            .top-bar a {
+                font-size: 1.5rem; /* Increase font size */
+                color: white;
+                text-decoration: none;
+            }
 
-        .top-bar .site-name {
-            font-size: 1.5rem;
-        }
+            .top-bar .hamburger {
+                font-size: 2.2rem; /* Slightly bigger menu icon */
+                background: none;
+                border: none;
+                color: white;
+                cursor: pointer;
+            }
 
-        /* Overlay Menu for Mobile and Desktop */
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            z-index: 1001;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+            .top-bar .site-name {
+                font-size: 1.8rem; /* Increase site name font */
+            }
 
-        .overlay.active {
-            display: flex;
-        }
+            /* Overlay Menu for Mobile and Desktop */
+            .overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+                z-index: 1001;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
 
-        .overlay a {
-            color: white;
-            font-size: 2rem;
-            margin: 20px 0;
-            text-decoration: none;
-        }
+            .overlay.active {
+                display: flex;
+            }
 
-        .overlay a:hover {
-            color: randomColor();
-        }
+            .overlay a {
+                color: white;
+                font-size: 2rem;
+                margin: 20px 0;
+                text-decoration: none;
+            }
 
-        /* Content */
-        .content {
-            flex-grow: 1;
-            padding-top: 70px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
+            .overlay a:hover {
+                color: randomColor();
+            }
 
-        .carousel-container {
-            width: 100%;
-            max-width: 80%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            flex-direction: column;
-        }
+            /* Content */
+            .content {
+                flex-grow: 1; /* Ensures content takes full height */
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start; /* Align content to start */
+                align-items: center;
+                height: auto; /* Allow dynamic height */
+                overflow-y: auto; /* Enable scrolling if needed */
+                padding-top: 25px; /* Ensure space below the top bar */
+            }
 
-        .carousel-slide {
-            display: none;
-            width: 100%;
-            max-width: 100%;
-            max-height: 80vh;
-            object-fit: contain;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        .carousel-slide.active {
-            display: block;
-            opacity: 1;
-        }
-
-        .carousel-buttons {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            pointer-events: none;
-        }
-
-        .carousel-buttons button {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 3rem;
-            pointer-events: auto;
-            cursor: pointer;
-        }
-
-        .carousel-buttons button:hover {
-            color: grey;
-        }
-
-        /* Grid View Layout */
-.grid-view {
-    display: none;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 10px;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    overflow-y: auto; /* Ensure scrolling */
-    padding: 10px 10px 60px; /* Adjusted bottom padding for better visibility */
+.carousel-container {
+    overflow: hidden;
+    height: 100vh; /* Full viewport height */
+    width: 100vw;
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
-/* Ensure images fit properly and are fully visible */
-.grid-view img {
-    width: 100%;
-    height: auto;
-    cursor: pointer;
-    object-fit: cover;
+            .carousel-slide {
+                display: none;
+                width: 100%;
+                max-width: 100%;
+                max-height: 80vh;
+                object-fit: contain;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+                aspect-ratio: 16 / 9; /* Maintain consistent aspect ratio */
+            }
+
+            .carousel-slide.active {
+                display: block;
+                opacity: 1;
+            }
+
+            .carousel-buttons {
+                position: absolute;
+                top: 50%;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                pointer-events: none;
+            }
+
+            .carousel-buttons button {
+                background: none;
+                border: none; /* Removed white stroke */
+                color: white;
+                font-size: 5.625rem; /* Increased size by another 25% from 4.5rem */
+                pointer-events: auto;
+                cursor: pointer;
+                position: absolute;
+                transform: translateY(-50%);
+                opacity: 1; /* Ensure they are visible */
+            }
+            #prevBtn {
+                left: 10%; /* Move it closer to the image */
+            }
+
+            #nextBtn {
+                right: 10%; /* Move it closer to the image */
+            }
+            .carousel-buttons button:hover {
+                color: grey;
+            }
+
+            .grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    width: 90%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 50px;
+    margin: 0 auto;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.grid-view.active {
+    visibility: visible;
+    opacity: 1;
 }
 
-/* Mobile: Single column layout & fix scrolling issue */
+            /* Ensure images fit properly and are fully visible */
+            .grid-view img {
+                width: 100%;
+                height: auto;
+                min-height: 200px; /* Ensures a minimum height to prevent shifts */
+                cursor: pointer;
+                object-fit: contain;
+                aspect-ratio: attr(width) / attr(height); /* Maintains correct aspect ratio */
+            }
+
+            /* Mobile: Single column layout & fix scrolling issue */
 @media (max-width: 768px) {
     .grid-view {
-        grid-template-columns: 1fr; /* Force single column */
-        gap: 10px;
-        width: 100%;
-        padding: 10px 10px 70px; /* Extra space at bottom */
-        overflow-y: auto;
-        max-height: calc(100vh - 70px); /* Ensures full visibility */
-        display: grid;
+        grid-template-columns: 1fr;
+        padding: 30px; /* Adjust padding for mobile */
+        max-height: calc(100vh - 70px);
+        margin-top: 0;
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+        width: 85vw; /* Ensure it stays within viewport width */
     }
 }
 
-        @media (max-width: 768px) {
-            .content {
-                padding-top: 60px;
+            @media (max-width: 768px) {
+                .carousel-container {
+                    height: 100vh; /* Make sure it fills the viewport */
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .carousel-slide {
+                    max-width: 100%; /* Use full width */
+                    max-height: 90vh; /* Use most of the viewport height */
+                    object-fit: contain; /* Prevent cropping */
+                }
+                .carousel-buttons {
+                    display: none; /* Hide navigation buttons for simplicity */
+                }
             }
-            .carousel-slide {
+
+            @media (max-width: 480px) {
+                .carousel-buttons button {
+                    padding: 5px;
+                }
+            }
+            /* Special effect for "color" link */
+            @keyframes wiggle {
+                0%,
+                100% {
+                    transform: rotate(-2deg);
+                }
+                50% {
+                    transform: rotate(2deg);
+                }
+            }
+
+            @keyframes sparkle {
+                0%,
+                100% {
+                    opacity: 1;
+                    filter: brightness(100%);
+                }
+                50% {
+                    opacity: 0.7;
+                    filter: brightness(150%);
+                }
+            }
+
+            /* Applying wiggle and sparkle on hover for the "color" link */
+            .color-link span {
+                display: inline-block;
+                animation: sparkle 1s infinite;
+            }
+ 
+            .color-link:hover span {
+                animation:
+                    wiggle 0.2s infinite,
+                    sparkle 1s infinite;
+            }
+
+            /* Mobile Carousel Styles */
+            .mobile-carousel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    flex-direction: column;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.mobile-carousel.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+            .mobile-carousel img {
                 max-width: 90%;
-                max-height: 70vh;
+                max-height: 90vh;
+                object-fit: contain;
             }
-        }
 
-        @media (max-width: 480px) {
-            .carousel-buttons button {
-                padding: 5px;
+            .mobile-nav {
+                position: relative;
+                font-size: 4rem;
+                background: none;
+                border: none;
+                color: white;
+                cursor: pointer;
+                z-index: 2001;
+                margin-top: 15px; /* Space below the image */
             }
-            .carousel-slide {
-                max-width: 95%;
-                max-height: 60vh;
+
+      /* Mobile Nav Buttons */
+.mobile-nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+/* Center the navigation buttons below the image */
+#mobile-prevBtn, #mobile-nextBtn {
+    position: relative;
+    margin: 0px; /* Space between buttons */
+}
+            .close-carousel {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                font-size: 2rem;
+                background: none;
+                border: none;
+                color: white;
+                cursor: pointer;
+                z-index: 2001;
             }
-        }
-        /* Special effect for "color" link */
-@keyframes wiggle {
-    0%, 100% {
-        transform: rotate(-2deg);
-    }
-    50% {
-        transform: rotate(2deg);
-    }
-}
+            /* Mobile Top Bar Adjustments */
+            @media (max-width: 768px) {
+                .top-bar {
+                    height: 60px; /* Increase height for better usability */
+                    padding: 0 15px;
+                }
 
-@keyframes sparkle {
-    0%, 100% {
-        opacity: 1;
-        filter: brightness(100%);
-    }
-    50% {
-        opacity: 0.7;
-        filter: brightness(150%);
-    }
-}
+                .top-bar .site-name {
+                    font-size: 1.5rem; /* Adjust font size for mobile */
+                }
 
-/* Applying wiggle and sparkle on hover for the "color" link */
-.color-link span {
-    display: inline-block;
-    animation: sparkle 1s infinite;
-}
+                .top-bar .hamburger {
+                    font-size: 2rem;
+                }
+            }
+        </style>
+    </head>
+    <body
+        oncontextmenu="return false"
+        ondragstart="return false"
+        onselectstart="return false"
+    >
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <button
+                class="hamburger"
+                aria-label="Toggle Navigation"
+                onclick="toggleOverlay()"
+            >
+                🍔
+            </button>
+            <a href="index.html" class="site-name">dylan permuy</a>
+        </div>
 
-.color-link:hover span {
-    animation: wiggle 0.2s infinite, sparkle 1s infinite;
-}
-    </style>
-</head>
-<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+        <!-- Overlay Menu -->
+        <div class="overlay" id="overlay" onclick="overlayClick(event)">
+            <a href="darkroom.html">darkroom</a>
+            <a href="new_jersey.html">new jersey</a>
+            <a href="florida.html">florida</a>
+            <a href="new_york.html">new york</a>
+            <a href="color.html" id="colorLink" class="color-link">color</a>
+            <a href="about.html">about</a>
+        </div>
 
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <button class="hamburger" aria-label="Toggle Navigation" onclick="toggleOverlay()">🍔</button>
-        <a href="index.html" class="site-name">dylan permuy</a>
-    </div>
+        <!-- Content -->
+        <div class="content">
+            <!-- Carousel Container -->
+            <div class="carousel-container" id="carouselContainer">
+                <img class="carousel-slide hidden active" fetchpriority="high"
+                    src="new york/kentmere_400_12_19_2021_000044670031.webp" 
+                    srcset="new york/kentmere_400_12_19_2021_000044670031-small.webp 480w, 
+                            new york/kentmere_400_12_19_2021_000044670031-medium.webp 1024w, 
+                            new york/kentmere_400_12_19_2021_000044670031.webp 1600w" 
+                    sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+                    alt="Photo 1" width="1600" height="900" />
+                <img class="carousel-slide hidden" loading="lazy" 
+                    src="new york/fomapan_100_classic_05_19_2024_000281550033.webp" 
+                    srcset="new york/fomapan_100_classic_05_19_2024_000281550033-small.webp 480w, 
+                            new york/fomapan_100_classic_05_19_2024_000281550033-medium.webp 1024w, 
+                            new york/fomapan_100_classic_05_19_2024_000281550033.webp 1600w" 
+                    sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+                    alt="Photo 2" width="1600" height="900" />
+                <img class="carousel-slide hidden" loading="lazy" 
+                    src="new york/ilford_delta_100_professional_06_09_2024_000243280004.webp" 
+                    srcset="new york/ilford_delta_100_professional_06_09_2024_000243280004-small.webp 480w, 
+                            new york/ilford_delta_100_professional_06_09_2024_000243280004-medium.webp 1024w, 
+                            new york/ilford_delta_100_professional_06_09_2024_000243280004.webp 1600w" 
+                    sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+                    alt="Photo 3" width="1600" height="900" />
+                <img class="carousel-slide hidden" loading="lazy" 
+                    src="new york/ilford_delta_400_professional_03_07_2024_000290100008.webp" 
+                    srcset="new york/ilford_delta_400_professional_03_07_2024_000290100008-small.webp 480w, 
+                            new york/ilford_delta_400_professional_03_07_2024_000290100008-medium.webp 1024w, 
+                            new york/ilford_delta_400_professional_03_07_2024_000290100008.webp 1600w" 
+                    sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+                    alt="Photo 4" width="1600" height="900" />
+                <img class="carousel-slide hidden" loading="lazy" 
+                    src="new york/ilford_delta_400_professional_03_07_2024_000290100018.webp" 
+                    srcset="new york/ilford_delta_400_professional_03_07_2024_000290100018-small.webp 480w, 
+                            new york/ilford_delta_400_professional_03_07_2024_000290100018-medium.webp 1024w, 
+                            new york/ilford_delta_400_professional_03_07_2024_000290100018.webp 1600w" 
+                    sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+                    alt="Photo 5" width="1600" height="900" />
+                <img class="carousel-slide hidden" loading="lazy" 
+                    src="new york/ilford_hp5_plus_03_13_2024_000253390026.webp" 
+                    srcset="new york/ilford_hp5_plus_03_13_2024_000253390026-small.webp 480w, 
+                            new york/ilford_hp5_plus_03_13_2024_000253390026-medium.webp 1024w, 
+                            new york/ilford_hp5_plus_03_13_2024_000253390026.webp 1600w" 
+                    sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+                    alt="Photo 6" width="1600" height="900" />
+                <img class="carousel-slide hidden" loading="lazy" 
+                    src="new york/ilford_xp2_super_04_02_2024_000259540021.webp" 
+                    srcset="new york/ilford_xp2_super_04_02_2024_000259540021-small.webp 480w, 
+                            new york/ilford_xp2_super_04_02_2024_000259540021-medium.webp 1024w, 
+                            new york/ilford_xp2_super_04_02_2024_000259540021.webp 1600w" 
+                    sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+                    alt="Photo 7" width="1600" height="900" />
+                <img class="carousel-slide hidden" loading="lazy" 
+                    src="new york/ilford_xp2_super_04_02_2024_000259540035.webp" 
+                    srcset="new york/ilford_xp2_super_04_02_2024_000259540035-small.webp 480w, 
+                            new york/ilford_xp2_super_04_02_2024_000259540035-medium.webp 1024w, 
+                            new york/ilford_xp2_super_04_02_2024_000259540035.webp 1600w" 
+                    sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+                    alt="Photo 8" width="1600" height="900" />
+                <img class="carousel-slide hidden" loading="lazy" 
+                    src="new york/kentmere_400_02_13_2024_000241820003.webp" 
+                    srcset="new york/kentmere_400_02_13_2024_000241820003-small.webp 480w, 
+                            new york/kentmere_400_02_13_2024_000241820003-medium.webp 1024w, 
+                            new york/kentmere_400_02_13_2024_000241820003.webp 1600w" 
+                    sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+                    alt="Photo 9" width="1600" height="900" />
+                <img class="carousel-slide hidden" loading="lazy" 
+                    src="new york/kentmere_400_06_27_2024_000254200035.webp" 
+                    srcset="new york/kentmere_400_06_27_2024_000254200035-small.webp 480w, 
+                            new york/kentmere_400_06_27_2024_000254200035-medium.webp 1024w, 
+                            new york/kentmere_400_06_27_2024_000254200035.webp 1600w" 
+                    sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+                    alt="Photo 10" width="1600" height="900" />
+                <img class="carousel-slide hidden" loading="lazy" 
+                    src="new york/kentmere_400_06_28_2023_000173660003.webp" 
+                    srcset="new york/kentmere_400_06_28_2023_000173660003-small.webp 480w, 
+                            new york/kentmere_400_06_28_2023_000173660003-medium.webp 1024w, 
+                            new york/kentmere_400_06_28_2023_000173660003.webp 1600w" 
+                    sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+                    alt="Photo 11" width="1600" height="900" />
+                <img class="carousel-slide hidden" loading="lazy" 
+                    src="new york/kentmere_400_06_28_2023_000173660010.webp" 
+                    srcset="new york/kentmere_400_06_28_2023_000173660010-small.webp 480w, 
+                            new york/kentmere_400_06_28_2023_000173660010-medium.webp 1024w, 
+                            new york/kentmere_400_06_28_2023_000173660010.webp 1600w" 
+                    sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+                    alt="Photo 12" width="1600" height="900" />
+                <img class="carousel-slide hidden" loading="lazy" 
+                    src="new york/kodak_professional_px_125_03_13_2024_000253380010.webp" 
+                    srcset="new york/kodak_professional_px_125_03_13_2024_000253380010-small.webp 480w, 
+                            new york/kodak_professional_px_125_03_13_2024_000253380010-medium.webp 1024w, 
+                            new york/kodak_professional_px_125_03_13_2024_000253380010.webp 1600w" 
+                    sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+                    alt="Photo 13" width="1600" height="900" />
+                <img class="carousel-slide hidden" loading="lazy" 
+                    src="new york/kodak_professional_t-max_400_03_07_2024_000290110005.webp" 
+                    srcset="new york/kodak_professional_t-max_400_03_07_2024_000290110005-small.webp 480w, 
+                            new york/kodak_professional_t-max_400_03_07_2024_000290110005-medium.webp 1024w, 
+                            new york/kodak_professional_t-max_400_03_07_2024_000290110005.webp 1600w" 
+                    sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+                    alt="Photo 14" width="1600" height="900" />
+                <img class="carousel-slide hidden" loading="lazy" 
+                    src="new york/kodak_professional_t-max_400_03_07_2024_000290110027.webp" 
+                    srcset="new york/kodak_professional_t-max_400_03_07_2024_000290110027-small.webp 480w, 
+                            new york/kodak_professional_t-max_400_03_07_2024_000290110027-medium.webp 1024w, 
+                            new york/kodak_professional_t-max_400_03_07_2024_000290110027.webp 1600w" 
+                    sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+                    alt="Photo 15" width="1600" height="900" />
+                <img class="carousel-slide hidden" loading="lazy" 
+                    src="new york/kodak_professional_t-max_400_06_27_2024_000254180005.webp" 
+                    srcset="new york/kodak_professional_t-max_400_06_27_2024_000254180005-small.webp 480w, 
+                            new york/kodak_professional_t-max_400_06_27_2024_000254180005-medium.webp 1024w, 
+                            new york/kodak_professional_t-max_400_06_27_2024_000254180005.webp 1600w" 
+                    sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+                    alt="Photo 16" width="1600" height="900" />
+                <img class="carousel-slide hidden" loading="lazy" 
+                    src="new york/kodak_professional_tri-x_400_07_18_2023_000169010025.webp" 
+                    srcset="new york/kodak_professional_tri-x_400_07_18_2023_000169010025-small.webp 480w, 
+                            new york/kodak_professional_tri-x_400_07_18_2023_000169010025-medium.webp 1024w, 
+                            new york/kodak_professional_tri-x_400_07_18_2023_000169010025.webp 1600w" 
+                    sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+                    alt="Photo 17" width="1600" height="900" />
+                <img class="carousel-slide hidden" loading="lazy" 
+                    src="new york/kodak_professional_tri-x_400_09_07_2023_000182600001.webp" 
+                    srcset="new york/kodak_professional_tri-x_400_09_07_2023_000182600001-small.webp 480w, 
+                            new york/kodak_professional_tri-x_400_09_07_2023_000182600001-medium.webp 1024w, 
+                            new york/kodak_professional_tri-x_400_09_07_2023_000182600001.webp 1600w" 
+                    sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+                    alt="Photo 18" width="1600" height="900" />
+                <img class="carousel-slide hidden" loading="lazy" 
+                    src="new york/kodak_professional_tri-x_400_09_07_2023_000182600015.webp" 
+                    srcset="new york/kodak_professional_tri-x_400_09_07_2023_000182600015-small.webp 480w, 
+                            new york/kodak_professional_tri-x_400_09_07_2023_000182600015-medium.webp 1024w, 
+                            new york/kodak_professional_tri-x_400_09_07_2023_000182600015.webp 1600w" 
+                    sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+                    alt="Photo 19" width="1600" height="900" />
+                <img class="carousel-slide hidden" loading="lazy" 
+                    src="new york/kentmere_400_07_31_2024_000340900005.webp" 
+                    srcset="new york/kentmere_400_07_31_2024_000340900005-small.webp 480w, 
+                            new york/kentmere_400_07_31_2024_000340900005-medium.webp 1024w, 
+                            new york/kentmere_400_07_31_2024_000340900005.webp 1600w" 
+                    sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+                    alt="Photo 20" width="1600" height="900" />
 
-    <!-- Overlay Menu -->
-    <div class="overlay" id="overlay" onclick="overlayClick(event)">
-        <a href="darkroom.html">darkroom</a>
-        <a href="new_jersey.html">new jersey</a>
-        <a href="florida.html">florida</a>
-        <a href="new_york.html">new york</a>
-        <a href="color.html" id="colorLink" class="color-link">color</a>
-        <a href="about.html">about</a>
-    </div>
-
-    <!-- Content -->
-    <div class="content">
-        <!-- Carousel Container -->
-        <div class="carousel-container">
-            <img class="carousel-slide active" src="new york/kentmere_400_12_19_2021_000044670031.webp" alt="Photo 1">
-            <img class="carousel-slide" src="new york/fomapan_100_classic_05_19_2024_000281550033.webp" alt="Photo 2">
-            <img class="carousel-slide" src="new york/ilford_delta_100_professional_06_09_2024_000243280004.webp" alt="Photo 3">
-            <img class="carousel-slide" src="new york/ilford_delta_400_professional_03_07_2024_000290100008.webp" alt="Photo 4">
-            <img class="carousel-slide" src="new york/ilford_delta_400_professional_03_07_2024_000290100018.webp" alt="Photo 5">
-            <img class="carousel-slide" src="new york/ilford_hp5_plus_03_13_2024_000253390026.webp" alt="Photo 6">
-            <img class="carousel-slide" src="new york/ilford_xp2_super_04_02_2024_000259540021.webp" alt="Photo 7">
-            <img class="carousel-slide" src="new york/ilford_xp2_super_04_02_2024_000259540035.webp" alt="Photo 8">
-            <img class="carousel-slide" src="new york/kentmere_400_02_13_2024_000241820003.webp" alt="Photo 9">
-            <img class="carousel-slide" src="new york/kentmere_400_06_27_2024_000254200035.webp" alt="Photo 11">
-            <img class="carousel-slide" src="new york/kentmere_400_06_28_2023_000173660003.webp" alt="Photo 12">
-            <img class="carousel-slide" src="new york/kentmere_400_06_28_2023_000173660010.webp" alt="Photo 13">
-            <img class="carousel-slide" src="new york/kodak_professional_px_125_03_13_2024_000253380010.webp" alt="Photo 14">
-            <img class="carousel-slide" src="new york/kodak_professional_t-max_400_03_07_2024_000290110005.webp" alt="Photo 15">
-            <img class="carousel-slide" src="new york/kodak_professional_t-max_400_03_07_2024_000290110027.webp" alt="Photo 16">
-            <img class="carousel-slide" src="new york/kodak_professional_t-max_400_06_27_2024_000254180005.webp" alt="Photo 17">
-            <img class="carousel-slide" src="new york/kodak_professional_tri-x_400_07_18_2023_000169010025.webp" alt="Photo 18">
-            <img class="carousel-slide" src="new york/kodak_professional_tri-x_400_09_07_2023_000182600001.webp" alt="Photo 19">
-            <img class="carousel-slide" src="new york/kodak_professional_tri-x_400_09_07_2023_000182600015.webp" alt="Photo 20">
-            <img class="carousel-slide" src="new york/kentmere_400_07_31_2024_000340900005.webp" alt="Photo 21">
-            
-            <!-- Carousel Buttons -->
-            <div class="carousel-buttons">
-                <button id="prevBtn">&#9664;</button>
-                <button id="nextBtn">&#9654;</button>
+                <!-- Carousel Buttons -->
+                <div class="carousel-buttons">
+                    <button id="prevBtn">&#9664;</button>
+                    <button id="nextBtn">&#9654;</button>
+                </div>
             </div>
-        </div>
 
-        <!-- Grid View Container -->
-        <div class="grid-view" id="gridView">
-            <img src="new york/kentmere_400_12_19_2021_000044670031.webp" alt="Photo 1">
-            <img src="new york/fomapan_100_classic_05_19_2024_000281550033.webp" alt="Photo 2">
-            <img src="new york/ilford_delta_100_professional_06_09_2024_000243280004.webp" alt="Photo 3">
-            <img src="new york/ilford_delta_400_professional_03_07_2024_000290100008.webp" alt="Photo 4">
-            <img src="new york/ilford_delta_400_professional_03_07_2024_000290100018.webp" alt="Photo 5">
-            <img src="new york/ilford_hp5_plus_03_13_2024_000253390026.webp" alt="Photo 6">
-            <img src="new york/ilford_xp2_super_04_02_2024_000259540021.webp" alt="Photo 7">
-            <img src="new york/ilford_xp2_super_04_02_2024_000259540035.webp" alt="Photo 8">
-            <img src="new york/kentmere_400_02_13_2024_000241820003.webp" alt="Photo 9">
-            <img src="new york/kentmere_400_06_27_2024_000254200035.webp" alt="Photo 11">
-            <img src="new york/kentmere_400_06_28_2023_000173660003.webp" alt="Photo 12">
-            <img src="new york/kentmere_400_06_28_2023_000173660010.webp" alt="Photo 13">
-            <img src="new york/kodak_professional_px_125_03_13_2024_000253380010.webp" alt="Photo 14">
-            <img src="new york/kodak_professional_t-max_400_03_07_2024_000290110005.webp" alt="Photo 15">
-            <img src="new york/kodak_professional_t-max_400_03_07_2024_000290110027.webp" alt="Photo 16">
-            <img src="new york/kodak_professional_t-max_400_06_27_2024_000254180005.webp" alt="Photo 17">
-            <img src="new york/kodak_professional_tri-x_400_07_18_2023_000169010025.webp" alt="Photo 18">
-            <img src="new york/kodak_professional_tri-x_400_09_07_2023_000182600001.webp" alt="Photo 19">
-            <img src="new york/kodak_professional_tri-x_400_09_07_2023_000182600015.webp" alt="Photo 20">
-            <img src="new york/kentmere_400_07_31_2024_000340900005.webp" alt="Photo 21">
-        </div>
-    </div>
+            <!-- Grid View Container -->
+            <div class="grid-view" id="gridView">
+    <img fetchpriority="high" 
+         src="new york/kentmere_400_12_19_2021_000044670031.webp" 
+         srcset="new york/kentmere_400_12_19_2021_000044670031-small.webp 480w, 
+                 new york/kentmere_400_12_19_2021_000044670031-medium.webp 1024w, 
+                 new york/kentmere_400_12_19_2021_000044670031.webp 1600w" 
+         sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+         alt="Photo 1" width="1600" height="900" />
+    <img loading="lazy" 
+         src="new york/fomapan_100_classic_05_19_2024_000281550033.webp" 
+         srcset="new york/fomapan_100_classic_05_19_2024_000281550033-small.webp 480w, 
+                 new york/fomapan_100_classic_05_19_2024_000281550033-medium.webp 1024w, 
+                 new york/fomapan_100_classic_05_19_2024_000281550033.webp 1600w" 
+         sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+         alt="Photo 2" width="1600" height="900" />
+    <img loading="lazy" 
+         src="new york/ilford_delta_100_professional_06_09_2024_000243280004.webp" 
+         srcset="new york/ilford_delta_100_professional_06_09_2024_000243280004-small.webp 480w, 
+                 new york/ilford_delta_100_professional_06_09_2024_000243280004-medium.webp 1024w, 
+                 new york/ilford_delta_100_professional_06_09_2024_000243280004.webp 1600w" 
+         sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+         alt="Photo 3" width="1600" height="900" />
+    <img loading="lazy" 
+         src="new york/ilford_delta_400_professional_03_07_2024_000290100008.webp" 
+         srcset="new york/ilford_delta_400_professional_03_07_2024_000290100008-small.webp 480w, 
+                 new york/ilford_delta_400_professional_03_07_2024_000290100008-medium.webp 1024w, 
+                 new york/ilford_delta_400_professional_03_07_2024_000290100008.webp 1600w" 
+         sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+         alt="Photo 4" width="1600" height="900" />
+    <img loading="lazy" 
+         src="new york/ilford_delta_400_professional_03_07_2024_000290100018.webp" 
+         srcset="new york/ilford_delta_400_professional_03_07_2024_000290100018-small.webp 480w, 
+                 new york/ilford_delta_400_professional_03_07_2024_000290100018-medium.webp 1024w, 
+                 new york/ilford_delta_400_professional_03_07_2024_000290100018.webp 1600w" 
+         sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+         alt="Photo 5" width="1600" height="900" />
+    <img loading="lazy" 
+         src="new york/ilford_hp5_plus_03_13_2024_000253390026.webp" 
+         srcset="new york/ilford_hp5_plus_03_13_2024_000253390026-small.webp 480w, 
+                 new york/ilford_hp5_plus_03_13_2024_000253390026-medium.webp 1024w, 
+                 new york/ilford_hp5_plus_03_13_2024_000253390026.webp 1600w" 
+         sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+         alt="Photo 6" width="1600" height="900" />
+    <img loading="lazy" 
+         src="new york/ilford_xp2_super_04_02_2024_000259540021.webp" 
+         srcset="new york/ilford_xp2_super_04_02_2024_000259540021-small.webp 480w, 
+                 new york/ilford_xp2_super_04_02_2024_000259540021-medium.webp 1024w, 
+                 new york/ilford_xp2_super_04_02_2024_000259540021.webp 1600w" 
+         sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+         alt="Photo 7" width="1600" height="900" />
+    <img loading="lazy" 
+         src="new york/ilford_xp2_super_04_02_2024_000259540035.webp" 
+         srcset="new york/ilford_xp2_super_04_02_2024_000259540035-small.webp 480w, 
+                 new york/ilford_xp2_super_04_02_2024_000259540035-medium.webp 1024w, 
+                 new york/ilford_xp2_super_04_02_2024_000259540035.webp 1600w" 
+         sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+         alt="Photo 8" width="1600" height="900" />
+    <img loading="lazy" 
+         src="new york/kentmere_400_02_13_2024_000241820003.webp" 
+         srcset="new york/kentmere_400_02_13_2024_000241820003-small.webp 480w, 
+                 new york/kentmere_400_02_13_2024_000241820003-medium.webp 1024w, 
+                 new york/kentmere_400_02_13_2024_000241820003.webp 1600w" 
+         sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+         alt="Photo 9" width="1600" height="900" />
+    <img loading="lazy" 
+         src="new york/kentmere_400_06_27_2024_000254200035.webp" 
+         srcset="new york/kentmere_400_06_27_2024_000254200035-small.webp 480w, 
+                 new york/kentmere_400_06_27_2024_000254200035-medium.webp 1024w, 
+                 new york/kentmere_400_06_27_2024_000254200035.webp 1600w" 
+         sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+         alt="Photo 10" width="1600" height="900" />
+    <img loading="lazy" 
+         src="new york/kentmere_400_06_28_2023_000173660003.webp" 
+         srcset="new york/kentmere_400_06_28_2023_000173660003-small.webp 480w, 
+                 new york/kentmere_400_06_28_2023_000173660003-medium.webp 1024w, 
+                 new york/kentmere_400_06_28_2023_000173660003.webp 1600w" 
+         sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+         alt="Photo 11" width="1600" height="900" />
+    <img loading="lazy" 
+         src="new york/kentmere_400_06_28_2023_000173660010.webp" 
+         srcset="new york/kentmere_400_06_28_2023_000173660010-small.webp 480w, 
+                 new york/kentmere_400_06_28_2023_000173660010-medium.webp 1024w, 
+                 new york/kentmere_400_06_28_2023_000173660010.webp 1600w" 
+         sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+         alt="Photo 12" width="1600" height="900" />
+    <img loading="lazy" 
+         src="new york/kodak_professional_px_125_03_13_2024_000253380010.webp" 
+         srcset="new york/kodak_professional_px_125_03_13_2024_000253380010-small.webp 480w, 
+                 new york/kodak_professional_px_125_03_13_2024_000253380010-medium.webp 1024w, 
+                 new york/kodak_professional_px_125_03_13_2024_000253380010.webp 1600w" 
+         sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+         alt="Photo 13" width="1600" height="900" />
+    <img loading="lazy" 
+         src="new york/kodak_professional_t-max_400_03_07_2024_000290110005.webp" 
+         srcset="new york/kodak_professional_t-max_400_03_07_2024_000290110005-small.webp 480w, 
+                 new york/kodak_professional_t-max_400_03_07_2024_000290110005-medium.webp 1024w, 
+                 new york/kodak_professional_t-max_400_03_07_2024_000290110005.webp 1600w" 
+         sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+         alt="Photo 14" width="1600" height="900" />
+    <img loading="lazy" 
+         src="new york/kodak_professional_t-max_400_03_07_2024_000290110027.webp" 
+         srcset="new york/kodak_professional_t-max_400_03_07_2024_000290110027-small.webp 480w, 
+                 new york/kodak_professional_t-max_400_03_07_2024_000290110027-medium.webp 1024w, 
+                 new york/kodak_professional_t-max_400_03_07_2024_000290110027.webp 1600w" 
+         sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+         alt="Photo 15" width="1600" height="900" />
+    <img loading="lazy" 
+         src="new york/kodak_professional_t-max_400_06_27_2024_000254180005.webp" 
+         srcset="new york/kodak_professional_t-max_400_06_27_2024_000254180005-small.webp 480w, 
+                 new york/kodak_professional_t-max_400_06_27_2024_000254180005-medium.webp 1024w, 
+                 new york/kodak_professional_t-max_400_06_27_2024_000254180005.webp 1600w" 
+         sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+         alt="Photo 16" width="1600" height="900" />
+    <img loading="lazy" 
+         src="new york/kodak_professional_tri-x_400_07_18_2023_000169010025.webp" 
+         srcset="new york/kodak_professional_tri-x_400_07_18_2023_000169010025-small.webp 480w, 
+                 new york/kodak_professional_tri-x_400_07_18_2023_000169010025-medium.webp 1024w, 
+                 new york/kodak_professional_tri-x_400_07_18_2023_000169010025.webp 1600w" 
+         sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+         alt="Photo 17" width="1600" height="900" />
+    <img loading="lazy" 
+         src="new york/kodak_professional_tri-x_400_09_07_2023_000182600001.webp" 
+         srcset="new york/kodak_professional_tri-x_400_09_07_2023_000182600001-small.webp 480w, 
+                 new york/kodak_professional_tri-x_400_09_07_2023_000182600001-medium.webp 1024w, 
+                 new york/kodak_professional_tri-x_400_09_07_2023_000182600001.webp 1600w" 
+         sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+         alt="Photo 18" width="1600" height="900" />
+    <img loading="lazy" 
+         src="new york/kodak_professional_tri-x_400_09_07_2023_000182600015.webp" 
+         srcset="new york/kodak_professional_tri-x_400_09_07_2023_000182600015-small.webp 480w, 
+                 new york/kodak_professional_tri-x_400_09_07_2023_000182600015-medium.webp 1024w, 
+                 new york/kodak_professional_tri-x_400_09_07_2023_000182600015.webp 1600w" 
+         sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+         alt="Photo 19" width="1600" height="900" />
+    <img loading="lazy" 
+         src="new york/kentmere_400_07_31_2024_000340900005.webp" 
+         srcset="new york/kentmere_400_07_31_2024_000340900005-small.webp 480w, 
+                 new york/kentmere_400_07_31_2024_000340900005-medium.webp 1024w, 
+                 new york/kentmere_400_07_31_2024_000340900005.webp 1600w" 
+         sizes="(max-width: 480px) 100vw, (max-width: 1024px) 80vw, 60vw" 
+         alt="Photo 20" width="1600" height="900" />
+</div>
+            <!-- Mobile Carousel -->
+            <div id="mobile-carousel" class="mobile-carousel">
+                <button class="close-carousel" onclick="closeMobileCarousel()">✕</button>
+                <img id="mobile-carousel-img" src="" alt="Expanded Image">
+                <div class="mobile-nav-buttons">
+                    <button id="mobile-prevBtn" class="mobile-nav">&#9664;</button>
+                    <button id="mobile-nextBtn" class="mobile-nav">&#9654;</button>
+                </div>
+            </div>
 
-    <script>
-        let currentIndex = 0;
-const slides = document.querySelectorAll('.carousel-slide');
-const prevButton = document.getElementById('prevBtn');
-const nextButton = document.getElementById('nextBtn');
-const gridView = document.getElementById('gridView');
-const carouselContainer = document.querySelector('.carousel-container');
-const gridImages = gridView.querySelectorAll('img');
-const overlay = document.getElementById('overlay');
-const overlayLinks = document.querySelectorAll('.overlay a');
-const colorLink = document.getElementById('colorLink');
-const colors = ['green', 'blue', 'orange', 'pink', 'purple'];
-let carouselInterval;
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll("img");
 
-// ✅ Function to determine if the screen is mobile-sized
-function isMobile() {
-    return window.innerWidth <= 768;
-}
-
-// ✅ Function to initialize view (list view for mobile, carousel for desktop)
-function initializeView() {
-    if (isMobile()) {
-        gridView.classList.add('active');
-        gridView.style.display = 'grid'; // Ensure grid view is displayed
-        carouselContainer.style.display = 'none';
-    } else {
-        gridView.classList.remove('active');
-        gridView.style.display = 'none'; // Hide grid view initially
-        carouselContainer.style.display = 'flex';
-    }
-}
-
-// ✅ Function to show the current slide
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        if (i === index) {
-            slide.classList.add('active');
-        }
+    images.forEach((img) => {
+        img.addEventListener("load", () => {
+            img.classList.remove("hidden");
+        });
     });
-}
-
-// ✅ Handle carousel navigation
-prevButton.addEventListener('click', () => {
-    currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
-    showSlide(currentIndex);
 });
-
-nextButton.addEventListener('click', () => {
-    currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
-    showSlide(currentIndex);
-});
-
-// ✅ Arrow key navigation
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') prevButton.click();
-    else if (e.key === 'ArrowRight') nextButton.click();
-});
-
-// ✅ Switch to grid view when clicking a carousel image
-slides.forEach(slide => {
-    slide.addEventListener('click', () => {
-        gridView.classList.add('active');
-        gridView.style.display = 'grid'; // Ensure grid is displayed
-        carouselContainer.style.display = 'none';
-    });
-});
-
-// ✅ Switch to carousel when clicking a list image (works on both mobile and desktop)
-gridImages.forEach((img, index) => {
-    img.addEventListener('click', () => {
-        gridView.classList.remove('active');
-        gridView.style.display = 'none'; // Hide grid when switching to carousel
-        carouselContainer.style.display = 'flex';
-        currentIndex = index;
-        showSlide(currentIndex);
-    });
-});
-
-// ✅ Auto-cycle through images every 6 seconds (desktop only)
-function startCarousel() {
-    if (carouselInterval) clearInterval(carouselInterval);
-    if (!isMobile() && carouselContainer.style.display !== 'none') {
-        carouselInterval = setInterval(() => {
-            nextButton.click();
-        }, 6000);
-    }
-}
-startCarousel();
-
-// ✅ Stop auto-cycling when clicking anywhere on desktop
-document.addEventListener('click', () => {
+            document.addEventListener("DOMContentLoaded", () => {
+                mobileCarousel.style.display = "none"; // Hide mobile carousel on load
+                initializeView(); // Initialize proper view based on device
+                // Attach click event to grid images for both Mobile and Desktop
+                gridImagesArray.forEach((img, index) => {
+                    img.addEventListener("click", (event) => {
+                        event.stopPropagation();
+                        if (isMobile()) {
+                            showMobileCarousel(index);
+                        } else {
+                            gridView.classList.remove("active");
+                            gridView.style.display = "none";
+                            carouselContainer.style.display = "flex";
+                            currentIndex = index;
+                            showSlide(currentIndex);
+                        }
+                    });
+                });
+            });
+document.addEventListener("click", () => {
     if (!isMobile()) {
-        startCarousel();
+        resetCarouselTimer();
+    }
+});
+            let currentIndex = 0;
+            const slides = document.querySelectorAll(".carousel-slide");
+            const prevButton = document.getElementById("prevBtn");
+            const nextButton = document.getElementById("nextBtn");
+            const gridView = document.getElementById("gridView");
+            const carouselContainer = document.querySelector(
+                ".carousel-container",
+            );
+            const gridImages = gridView.querySelectorAll("img");
+            const overlay = document.getElementById("overlay");
+            const overlayLinks = document.querySelectorAll(".overlay a");
+            const colorLink = document.getElementById("colorLink");
+                const colors = ["green", "blue", "orange", "pink", "purple"];
+            let carouselInterval;
+
+            // ✅ Function to determine if the screen is mobile-sized
+            function isMobile() {
+                return window.innerWidth <= 768;
+            }
+
+            // ✅ Function to initialize view (list view for mobile, carousel for desktop)
+            function initializeView() {
+                if (isMobile()) {
+                    gridView.classList.add("active");
+                    gridView.style.display = "grid";
+                    carouselContainer.style.display = "none";
+                } else {
+                    gridView.classList.remove("active");
+                    gridView.style.display = "none";
+                    carouselContainer.style.display = "flex";
+                }
+            }
+
+            // ✅ Function to show the current slide and update background color
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.remove("active");
+                    if (i === index) {
+                        slide.classList.add("active");
+                    }
+                });
+            }
+
+            // ✅ Function to reset the auto-advance timer
+            function resetCarouselTimer() {
+                if (carouselInterval) clearInterval(carouselInterval);
+                startCarousel();
+            }
+
+            // ✅ Enable left/right arrow key navigation for the carousel & reset timer
+            document.addEventListener("keydown", (event) => {
+                if (carouselContainer.style.display !== "none") {
+                    // Only if carousel is visible
+                    if (event.key === "ArrowLeft") {
+                        currentIndex =
+                            currentIndex === 0
+                                ? slides.length - 1
+                                : currentIndex - 1;
+                        showSlide(currentIndex);
+                        resetCarouselTimer(); // Reset timer on left arrow press
+                        prevButton.style.color = randomColor();
+                        nextButton.style.color = randomColor();
+                    } else if (event.key === "ArrowRight") {
+                        currentIndex =
+                            currentIndex === slides.length - 1
+                                ? 0
+                                : currentIndex + 1;
+                        showSlide(currentIndex);
+                        resetCarouselTimer(); // Reset timer on right arrow press
+                        prevButton.style.color = randomColor();
+                        nextButton.style.color = randomColor();
+                    }
+                }
+            });
+
+            // ✅ Handle carousel navigation and update background color
+            prevButton.addEventListener("click", () => {
+                currentIndex = currentIndex === 0 ? slides.length - 1 : currentIndex - 1;
+                showSlide(currentIndex);
+                prevButton.style.color = randomColor();
+                nextButton.style.color = randomColor();
+            });
+
+            nextButton.addEventListener("click", () => {
+                currentIndex = currentIndex === slides.length - 1 ? 0 : currentIndex + 1;
+                showSlide(currentIndex);
+                prevButton.style.color = randomColor();
+                nextButton.style.color = randomColor();
+            });
+
+            // ✅ Switch to grid view when clicking a carousel image
+            slides.forEach((slide) => {
+                slide.addEventListener("click", () => {
+                    if (!isMobile()) {
+                        gridView.classList.add("active");
+                        gridView.style.display = "grid";
+                        carouselContainer.style.display = "none";
+                    }
+                });
+            });
+
+
+            // ✅ Auto-cycle through images every 6 seconds (desktop only)
+            function startCarousel() {
+                if (carouselInterval) clearInterval(carouselInterval);
+                if (!isMobile() && carouselContainer.style.display !== "none") {
+                    carouselInterval = setInterval(() => {
+                        nextButton.click();
+                    }, 6000);
+                }
+            }
+            startCarousel();
+
+
+            // ✅ Toggle overlay menu
+            function toggleOverlay() {
+                overlay.classList.toggle("active");
+            }
+
+            // ✅ Close overlay menu when clicking outside of links
+            function overlayClick(event) {
+                if (!event.target.matches(".overlay a")) {
+                    overlay.classList.remove("active");
+                }
+            }
+
+            // ✅ Function to generate a random color
+            function randomColor() {
+                return colors[Math.floor(Math.random() * colors.length)];
+            }
+
+            // ✅ Add hover effect for overlay links
+            overlayLinks.forEach((link) => {
+                link.addEventListener("mouseover", () => {
+                    link.style.color = randomColor();
+                });
+                link.addEventListener("mouseleave", () => {
+                    link.style.color = "white";
+                });
+            });
+
+            // ✅ Function to set random colors for each letter of "color"
+            function setRandomColorForColorLink() {
+                const text = colorLink.innerText;
+                colorLink.innerHTML = text
+                    .split("")
+                    .map((char) => `<span>${char}</span>`)
+                    .join("");
+ 
+                colorLink.addEventListener("mouseover", () => {
+                    let lastColor = null;
+                    colorLink.querySelectorAll("span").forEach((span) => {
+                        let color;
+                        do {
+                            color =
+                                colors[
+                                    Math.floor(Math.random() * colors.length)
+                                ];
+                        } while (color === lastColor);
+                        lastColor = color;
+                        span.style.color = color;
+                    });
+                });
+ 
+                colorLink.addEventListener("mouseleave", () => {
+                    colorLink.querySelectorAll("span").forEach((span) => {
+                        span.style.color = "white";
+                    });
+                });
+            }
+            setRandomColorForColorLink();
+
+            /* Mobile Carousel JavaScript */
+            const mobileCarousel = document.getElementById("mobile-carousel");
+            const mobileCarouselImg = document.getElementById("mobile-carousel-img");
+            const mobilePrevBtn = document.getElementById("mobile-prevBtn");
+            const mobileNextBtn = document.getElementById("mobile-nextBtn");
+
+            let mobileCurrentIndex = 0;
+
+// Get all grid images and cache count
+const gridImagesArray = Array.from(gridImages);
+const gridImagesCount = gridImagesArray.length;
+
+
+// Function to show the mobile carousel and disable the old carousel
+function showMobileCarousel(index) {
+    if (isMobile()) {
+        mobileCurrentIndex = index;
+        mobileCarouselImg.src = gridImagesArray[index].src;
+        mobileCarousel.classList.add("active");
+        mobileCarousel.style.display = "flex"; // Ensure visibility
+        carouselContainer.style.display = "none"; // Hide old carousel
+        gridView.classList.remove("active");
+    }
+}
+
+// Function to close the mobile carousel and return to grid view
+function closeMobileCarousel() {
+    mobileCarousel.classList.remove("active");
+    mobileCarousel.style.display = "none"; // Hide properly
+    gridView.classList.add("active");
+}
+// Prevent event listener overload
+function removeEventListeners() {
+    mobilePrevBtn.removeEventListener("click", navigateMobileCarousel);
+    mobileNextBtn.removeEventListener("click", navigateMobileCarousel);
+}
+
+function navigateMobileCarousel(event) {
+    removeEventListeners(); // Remove old listeners before re-adding
+
+    if (event.target === mobilePrevBtn) {
+        mobileCurrentIndex = mobileCurrentIndex === 0 ? gridImagesCount - 1 : mobileCurrentIndex - 1;
+    } else {
+        mobileCurrentIndex = mobileCurrentIndex === gridImagesCount - 1 ? 0 : mobileCurrentIndex + 1;
+    }
+
+    mobileCarouselImg.src = gridImagesArray[mobileCurrentIndex].src;
+    mobilePrevBtn.style.color = randomColor();
+    mobileNextBtn.style.color = randomColor();
+
+    mobilePrevBtn.addEventListener("click", navigateMobileCarousel);
+    mobileNextBtn.addEventListener("click", navigateMobileCarousel);
+}
+
+// Allow clicking anywhere in the black area (but not the image) to close the mobile carousel
+mobileCarousel.addEventListener("click", (event) => {
+    if (event.target === mobileCarousel) { // Ensure only clicks on the background close it
+        closeMobileCarousel();
     }
 });
 
-// ✅ Toggle overlay menu
-function toggleOverlay() {
-    overlay.classList.toggle('active');
-}
+// Navigate through images in mobile carousel
+mobilePrevBtn.addEventListener("click", navigateMobileCarousel);
+mobileNextBtn.addEventListener("click", navigateMobileCarousel);
 
-// ✅ Close overlay menu when clicking outside of links
-function overlayClick(event) {
-    if (!event.target.matches('.overlay a')) {
-        overlay.classList.remove('active');
-    }
-}
+            // Assign a random color to the navigation buttons on page load
+            prevButton.style.color = randomColor();
+            nextButton.style.color = randomColor();
+            mobilePrevBtn.style.color = randomColor();
+            mobileNextBtn.style.color = randomColor();
 
-// ✅ Function to generate a random color
-function randomColor() {
-    return colors[Math.floor(Math.random() * colors.length)];
-}
+            // ✅ Re-check view if the window resizes with throttle
+            let resizeTimeout;
+            window.addEventListener("resize", () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    initializeView();
+                }, 200);
+            });
 
-// ✅ Add hover effect for overlay links
-overlayLinks.forEach(link => {
-    link.addEventListener('mouseover', () => {
-        link.style.color = randomColor();
-    });
-    link.addEventListener('mouseleave', () => {
-        link.style.color = 'white';
-    });
-});
-
-// ✅ Function to set random colors for each letter of "color"
-function setRandomColorForColorLink() {
-    const text = colorLink.innerText;
-    colorLink.innerHTML = text.split('').map((char) => `<span>${char}</span>`).join('');
-
-    colorLink.addEventListener('mouseover', () => {
-        let lastColor = null;
-        colorLink.querySelectorAll('span').forEach(span => {
-            let color;
-            do {
-                color = colors[Math.floor(Math.random() * colors.length)];
-            } while (color === lastColor);
-            lastColor = color;
-            span.style.color = color;
-        });
-    });
-
-    colorLink.addEventListener('mouseleave', () => {
-        colorLink.querySelectorAll('span').forEach(span => {
-            span.style.color = 'white';
-        });
-    });
-}
-setRandomColorForColorLink();
-
-// ✅ Initialize view on page load
-initializeView();
-
-// ✅ Re-check view if the window resizes
-window.addEventListener('resize', initializeView);
-
-    </script>
-
-</body>
+            // ✅ Ensure grid images load correctly by hiding broken images
+            document.addEventListener("DOMContentLoaded", () => {
+                const gridImagesArray = Array.from(document.querySelectorAll(".grid-view img"));
+                gridImagesArray.forEach((img) => {
+                    img.onerror = () => {
+                        console.error("Image failed to load:", img.src);
+                        img.style.display = "none"; // Hide broken images
+                    };
+                });
+            });
+        </script>
+    </body>
 </html>

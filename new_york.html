@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/webp" href="ie favicon.webp"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>dylan permuy</title>
+
+    <!-- Include the Google Font link for pacquarda Bastarda 9 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom cursor */
+        body {
+            cursor: url('data:image/x-icon;base64,AAACAAEAICAAAAAAAACoDAAAFgAAACgAAAAgAAAAQAAAAAEAGAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJCAoLCgwTEhQfHiIPDhIICxIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWFRcqKSssKy0YFxsNDBAKDRUJDBMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKCgo8Oz1GRUc3NjhJSEwvLjIkKzQFDRcGDhcBBA0NEBcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhISFHRkhSUVNramx0c3dubXFaYW1SW2c7RE4jKzQBAgkBAgcBBAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdHhw+Pj5RUFJTUlR2dXeDgoaPjpKttcGFjps4QU5MVV8pLzgeIygHCAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeHx1BQUFtbG5ycXN7enyIh4udnKCmr7vV4O3U3eqpsryIj5dHS1EaHiMUFhkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAOjdBNzNUSUVnXlqJg3+LiISLjIq3ubi/zczM29rq+PfZ5eXS3NzEyspma2wvMzQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApIx9gV1NjWlZ2bWlpY1+kop65ure5vLrM2djw/fza5+a+ysqvuLihp6h7f4BNUFEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABNSURSTEdhXFd7dnF7d3JiYFy8vbnw8+/k8O7p9/bs9/fZ4+OdpqZ+g4RQVFWMjo8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkJR9BPzp3c297eHOdmpWlo5+ZmpSChX+4vLaqtLOlr6+xvLx4gYGFjI1OU1Q+QkMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxMi5YWFRZV1WtqqmcmpnHx8Px8u7r7+nd4duosK6ZoaFhaWk/REVSV1g1OToAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgHxsaGRUXFhIMDQkIDAYHCwVGSkc/QkI8Pj9xc3TT1dbDxsbz9/P1+fPy9fDf5uXM0dKora5fZGU2OToAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALCgYbGxYnJyFra2MoKiMfIx4XGxlQVVRRVVh2eX9aXWNXWmGgpKfy9/Xy9vTv8+7O0tKzt7heYWI4OzwdHyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPDgsxMipDRDtMTUOLjIIlJx4SFRIqLy5qb3KDiJCanqmboayjp7KTl59iZ2p+g4J+gX6VmJducHEoKis1NzgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhIBxERD5XWE9cXVOXmY1cX1IfIhgnKysKDRE4PUWUmqiTmanByNrY3uzq8PrY3OOKjpJfYmJPTk8/PT9GREYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAqKCZWVVFnaGFlZlzLzcF6fG8HCgIlKB4RExcGBw0/Q1BLUWNhZ369xNzP1erc4vTR1ODHytFmaGxEQkUlIiQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/PjteXViTlIywsacqLCIdIBRJTD05OzKIio9fYWskKDhMUWhDSmNCSWSmrcaZnrONkaB4eoQvMTYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiISBWVlNLTEYhIxsWGBAWGQ01OSo3Oyt9fnh6eIW1ssDHxdWJiJtNTWNAP1YQECUwMEIqKDgpJzWDgIoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYGRgzNDAHCAQ4OjMOEg0UGA9OU0RTWEl9f3ijn6u3sr/IxNG/u8e1sb3SztqIhJA0MDxDP0wEAgwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgISAVFhMAAACJjIQVGQ4HCwRuc2Z1emt/g3iSkJTGxcnW1Nh/foJ/foKhn6O9u8CjoaUZGBwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFBwMSFgwlKR4HCwJ/g3atsaa1trLS1ND39/Tl5uK+v7ulp6Kam5eEhYEyNC8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0NTEqLSSChXyfo5gvMygxNCrDx7zp7eLT18zU2M29wbeQlIqSlotBRTseIhgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATFBIVFhFhYl1ydG6yta25urQbHhdVV1E0NjCkpp90dnBmaGJZW1ReYFkfIRsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXGBZ0dXPP0MzV1tKPkIwfIBwpKiZcXFyTk5N8fHskJCQ5OTheX14WFhUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWFhZKS0rBwsDl5uRxcnAXGBQTFBCAgIDFwsmmpKstKjIYFh05Nz4rKTBqZ28AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA6OjqVlZWSkpI/Pz9FRUUUFBM6OjlpaWhLSkx5dYAyLjkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAqKiqgoKBnZ2chISEsLCwAAAAAAAAAAABAP0EpJysAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABNTU1CQkJEREQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/////////////wP///8B///+AD///gAP//wAD//8AAf/+AAH//gAB//4AAf/8AAP//AAH/wAAD/4AAA/8AAAf+AAAP/AAAH/wAAH/4AAB/+AAA//kAAf//AAH//wAB//4AA//+AAf//AAH//gA///wcf//8f//////////////w=='), auto;
+        }
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Jacquarda Bastarda 9', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Top Bar for Desktop and Mobile */
+        .top-bar {
+            display: flex;
+            height: 70px;
+            background-color: black;
+            color: white;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+            z-index: 1000;
+            transition: top 0.3s;
+        }
+
+        .top-bar a {
+            font-size: 1.2rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        .top-bar .hamburger {
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        .top-bar .site-name {
+            font-size: 1.5rem;
+        }
+
+        /* Overlay Menu for Mobile and Desktop */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1001;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlay.active {
+            display: flex;
+        }
+
+        .overlay a {
+            color: white;
+            font-size: 2rem;
+            margin: 20px 0;
+            text-decoration: none;
+        }
+
+        .overlay a:hover {
+            color: randomColor();
+        }
+
+        /* Content */
+        .content {
+            flex-grow: 1;
+            padding-top: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .carousel-container {
+            width: 100%;
+            max-width: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            flex-direction: column;
+        }
+
+        .carousel-slide {
+            display: none;
+            width: 100%;
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .carousel-slide.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+        }
+
+        .carousel-buttons button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 3rem;
+            pointer-events: auto;
+            cursor: pointer;
+        }
+
+        .carousel-buttons button:hover {
+            color: grey;
+        }
+
+        /* Grid View Layout */
+.grid-view {
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    overflow-y: auto; /* Ensure scrolling */
+    padding: 10px 10px 60px; /* Adjusted bottom padding for better visibility */
+    justify-content: center;
+}
+
+/* Ensure images fit properly and are fully visible */
+.grid-view img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+/* Mobile: Single column layout & fix scrolling issue */
+@media (max-width: 768px) {
+    .grid-view {
+        grid-template-columns: 1fr; /* Force single column */
+        gap: 10px;
+        width: 100%;
+        padding: 10px 10px 70px; /* Extra space at bottom */
+        overflow-y: auto;
+        max-height: calc(100vh - 70px); /* Ensures full visibility */
+        display: grid;
+    }
+}
+
+        @media (max-width: 768px) {
+            .content {
+                padding-top: 60px;
+            }
+            .carousel-slide {
+                max-width: 90%;
+                max-height: 70vh;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-buttons button {
+                padding: 5px;
+            }
+            .carousel-slide {
+                max-width: 95%;
+                max-height: 60vh;
+            }
+        }
+        /* Special effect for "color" link */
+@keyframes wiggle {
+    0%, 100% {
+        transform: rotate(-2deg);
+    }
+    50% {
+        transform: rotate(2deg);
+    }
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 1;
+        filter: brightness(100%);
+    }
+    50% {
+        opacity: 0.7;
+        filter: brightness(150%);
+    }
+}
+
+/* Applying wiggle and sparkle on hover for the "color" link */
+.color-link span {
+    display: inline-block;
+    animation: sparkle 1s infinite;
+}
+
+.color-link:hover span {
+    animation: wiggle 0.2s infinite, sparkle 1s infinite;
+}
+    </style>
+</head>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <button class="hamburger" aria-label="Toggle Navigation" onclick="toggleOverlay()">🍔</button>
+        <a href="index.html" class="site-name">dylan permuy</a>
+    </div>
+
+    <!-- Overlay Menu -->
+    <div class="overlay" id="overlay" onclick="overlayClick(event)">
+        <a href="darkroom.html">darkroom</a>
+        <a href="new_jersey.html">new jersey</a>
+        <a href="florida.html">florida</a>
+        <a href="new_york.html">new york</a>
+        <a href="color.html" id="colorLink" class="color-link">color</a>
+        <a href="about.html">about</a>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <!-- Carousel Container -->
+        <div class="carousel-container">
+            <img class="carousel-slide active" src="new york/kentmere_400_12_19_2021_000044670031.webp" alt="Photo 1">
+            <img class="carousel-slide" src="new york/fomapan_100_classic_05_19_2024_000281550033.webp" alt="Photo 2">
+            <img class="carousel-slide" src="new york/ilford_delta_100_professional_06_09_2024_000243280004.webp" alt="Photo 3">
+            <img class="carousel-slide" src="new york/ilford_delta_400_professional_03_07_2024_000290100008.webp" alt="Photo 4">
+            <img class="carousel-slide" src="new york/ilford_delta_400_professional_03_07_2024_000290100018.webp" alt="Photo 5">
+            <img class="carousel-slide" src="new york/ilford_hp5_plus_03_13_2024_000253390026.webp" alt="Photo 6">
+            <img class="carousel-slide" src="new york/ilford_xp2_super_04_02_2024_000259540021.webp" alt="Photo 7">
+            <img class="carousel-slide" src="new york/ilford_xp2_super_04_02_2024_000259540035.webp" alt="Photo 8">
+            <img class="carousel-slide" src="new york/kentmere_400_02_13_2024_000241820003.webp" alt="Photo 9">
+            <img class="carousel-slide" src="new york/kentmere_400_06_27_2024_000254200035.webp" alt="Photo 11">
+            <img class="carousel-slide" src="new york/kentmere_400_06_28_2023_000173660003.webp" alt="Photo 12">
+            <img class="carousel-slide" src="new york/kentmere_400_06_28_2023_000173660010.webp" alt="Photo 13">
+            <img class="carousel-slide" src="new york/kodak_professional_px_125_03_13_2024_000253380010.webp" alt="Photo 14">
+            <img class="carousel-slide" src="new york/kodak_professional_t-max_400_03_07_2024_000290110005.webp" alt="Photo 15">
+            <img class="carousel-slide" src="new york/kodak_professional_t-max_400_03_07_2024_000290110027.webp" alt="Photo 16">
+            <img class="carousel-slide" src="new york/kodak_professional_t-max_400_06_27_2024_000254180005.webp" alt="Photo 17">
+            <img class="carousel-slide" src="new york/kodak_professional_tri-x_400_07_18_2023_000169010025.webp" alt="Photo 18">
+            <img class="carousel-slide" src="new york/kodak_professional_tri-x_400_09_07_2023_000182600001.webp" alt="Photo 19">
+            <img class="carousel-slide" src="new york/kodak_professional_tri-x_400_09_07_2023_000182600015.webp" alt="Photo 20">
+            <img class="carousel-slide" src="new york/kentmere_400_07_31_2024_000340900005.webp" alt="Photo 21">
+            
+            <!-- Carousel Buttons -->
+            <div class="carousel-buttons">
+                <button id="prevBtn">&#9664;</button>
+                <button id="nextBtn">&#9654;</button>
+            </div>
+        </div>
+
+        <!-- Grid View Container -->
+        <div class="grid-view" id="gridView">
+            <img src="new york/kentmere_400_12_19_2021_000044670031.webp" alt="Photo 1">
+            <img src="new york/fomapan_100_classic_05_19_2024_000281550033.webp" alt="Photo 2">
+            <img src="new york/ilford_delta_100_professional_06_09_2024_000243280004.webp" alt="Photo 3">
+            <img src="new york/ilford_delta_400_professional_03_07_2024_000290100008.webp" alt="Photo 4">
+            <img src="new york/ilford_delta_400_professional_03_07_2024_000290100018.webp" alt="Photo 5">
+            <img src="new york/ilford_hp5_plus_03_13_2024_000253390026.webp" alt="Photo 6">
+            <img src="new york/ilford_xp2_super_04_02_2024_000259540021.webp" alt="Photo 7">
+            <img src="new york/ilford_xp2_super_04_02_2024_000259540035.webp" alt="Photo 8">
+            <img src="new york/kentmere_400_02_13_2024_000241820003.webp" alt="Photo 9">
+            <img src="new york/kentmere_400_06_27_2024_000254200035.webp" alt="Photo 11">
+            <img src="new york/kentmere_400_06_28_2023_000173660003.webp" alt="Photo 12">
+            <img src="new york/kentmere_400_06_28_2023_000173660010.webp" alt="Photo 13">
+            <img src="new york/kodak_professional_px_125_03_13_2024_000253380010.webp" alt="Photo 14">
+            <img src="new york/kodak_professional_t-max_400_03_07_2024_000290110005.webp" alt="Photo 15">
+            <img src="new york/kodak_professional_t-max_400_03_07_2024_000290110027.webp" alt="Photo 16">
+            <img src="new york/kodak_professional_t-max_400_06_27_2024_000254180005.webp" alt="Photo 17">
+            <img src="new york/kodak_professional_tri-x_400_07_18_2023_000169010025.webp" alt="Photo 18">
+            <img src="new york/kodak_professional_tri-x_400_09_07_2023_000182600001.webp" alt="Photo 19">
+            <img src="new york/kodak_professional_tri-x_400_09_07_2023_000182600015.webp" alt="Photo 20">
+            <img src="new york/kentmere_400_07_31_2024_000340900005.webp" alt="Photo 21">
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+const prevButton = document.getElementById('prevBtn');
+const nextButton = document.getElementById('nextBtn');
+const gridView = document.getElementById('gridView');
+const carouselContainer = document.querySelector('.carousel-container');
+const gridImages = gridView.querySelectorAll('img');
+const overlay = document.getElementById('overlay');
+const overlayLinks = document.querySelectorAll('.overlay a');
+const colorLink = document.getElementById('colorLink');
+const colors = ['green', 'blue', 'orange', 'pink', 'purple'];
+let carouselInterval;
+
+// ✅ Function to determine if the screen is mobile-sized
+function isMobile() {
+    return window.innerWidth <= 768;
+}
+
+// ✅ Function to initialize view (list view for mobile, carousel for desktop)
+function initializeView() {
+    if (isMobile()) {
+        gridView.classList.add('active');
+        gridView.style.display = 'grid'; // Ensure grid view is displayed
+        carouselContainer.style.display = 'none';
+    } else {
+        gridView.classList.remove('active');
+        gridView.style.display = 'none'; // Hide grid view initially
+        carouselContainer.style.display = 'flex';
+    }
+}
+
+// ✅ Function to show the current slide
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+            slide.classList.add('active');
+        }
+    });
+}
+
+// ✅ Handle carousel navigation
+prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
+    showSlide(currentIndex);
+});
+
+nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+    showSlide(currentIndex);
+});
+
+// ✅ Arrow key navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') prevButton.click();
+    else if (e.key === 'ArrowRight') nextButton.click();
+});
+
+// ✅ Switch to grid view when clicking a carousel image
+slides.forEach(slide => {
+    slide.addEventListener('click', () => {
+        gridView.classList.add('active');
+        gridView.style.display = 'grid'; // Ensure grid is displayed
+        carouselContainer.style.display = 'none';
+    });
+});
+
+// ✅ Switch to carousel when clicking a list image (works on both mobile and desktop)
+gridImages.forEach((img, index) => {
+    img.addEventListener('click', () => {
+        gridView.classList.remove('active');
+        gridView.style.display = 'none'; // Hide grid when switching to carousel
+        carouselContainer.style.display = 'flex';
+        currentIndex = index;
+        showSlide(currentIndex);
+    });
+});
+
+// ✅ Auto-cycle through images every 6 seconds (desktop only)
+function startCarousel() {
+    if (carouselInterval) clearInterval(carouselInterval);
+    if (!isMobile() && carouselContainer.style.display !== 'none') {
+        carouselInterval = setInterval(() => {
+            nextButton.click();
+        }, 6000);
+    }
+}
+startCarousel();
+
+// ✅ Stop auto-cycling when clicking anywhere on desktop
+document.addEventListener('click', () => {
+    if (!isMobile()) {
+        startCarousel();
+    }
+});
+
+// ✅ Toggle overlay menu
+function toggleOverlay() {
+    overlay.classList.toggle('active');
+}
+
+// ✅ Close overlay menu when clicking outside of links
+function overlayClick(event) {
+    if (!event.target.matches('.overlay a')) {
+        overlay.classList.remove('active');
+    }
+}
+
+// ✅ Function to generate a random color
+function randomColor() {
+    return colors[Math.floor(Math.random() * colors.length)];
+}
+
+// ✅ Add hover effect for overlay links
+overlayLinks.forEach(link => {
+    link.addEventListener('mouseover', () => {
+        link.style.color = randomColor();
+    });
+    link.addEventListener('mouseleave', () => {
+        link.style.color = 'white';
+    });
+});
+
+// ✅ Function to set random colors for each letter of "color"
+function setRandomColorForColorLink() {
+    const text = colorLink.innerText;
+    colorLink.innerHTML = text.split('').map((char) => `<span>${char}</span>`).join('');
+
+    colorLink.addEventListener('mouseover', () => {
+        let lastColor = null;
+        colorLink.querySelectorAll('span').forEach(span => {
+            let color;
+            do {
+                color = colors[Math.floor(Math.random() * colors.length)];
+            } while (color === lastColor);
+            lastColor = color;
+            span.style.color = color;
+        });
+    });
+
+    colorLink.addEventListener('mouseleave', () => {
+        colorLink.querySelectorAll('span').forEach(span => {
+            span.style.color = 'white';
+        });
+    });
+}
+setRandomColorForColorLink();
+
+// ✅ Initialize view on page load
+initializeView();
+
+// ✅ Re-check view if the window resizes
+window.addEventListener('resize', initializeView);
+
+    </script>
+
+</body>
+</html>

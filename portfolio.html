@@ -164,6 +164,29 @@
 .color-link:hover span {
     animation: wiggle 0.2s infinite, sparkle 1s infinite;
 }
+
+/* Light mode icon styling */
+#lightModeIcon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    cursor: default;
+}
+@media (max-width: 768px) {
+    #lightModeIcon {
+        display: none;
+    }
+}
     </style>
 </head>
 <body oncontextmenu="return false">
@@ -197,6 +220,13 @@
         <img src="portfolio carousel/kodak_professional_tri-x_400_01_04_2023_000057720033.webp" alt="Photo 9">
         <img src="portfolio carousel/fomapan_400_action_04_22_2022_000022350017.webp" alt="Photo 10">
     </div>
+
+    <!-- Light mode icon (visible on desktop screens) -->
+    <a href="portfolio-lite_v1.1.html">
+      <div id="lightModeIcon">
+          <img src="lightmode.png" alt="Light mode" style="width:100%; height:100%; object-fit:contain;">
+      </div>
+    </a>
 
     <script>
         const overlay = document.getElementById('overlay');

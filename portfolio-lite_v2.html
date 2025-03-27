@@ -77,6 +77,35 @@
         margin: 0 auto;
       }
     }
+    .overlay-container {
+      position: relative;
+      display: inline-block;
+      z-index: 1; /* Default stacking order */
+    }
+    .overlay-container:hover {
+      z-index: 10; /* Bring to the top when hovered */
+    }
+    .overlay-container img.overlay-gif {
+      position: absolute;
+      top: 12.5%; /* Center the reduced GIF */
+      left: 12.5%; /* Center the reduced GIF */
+      width: 75%; /* Reduce width by 25% */
+      height: 75%; /* Reduce height by 25% */
+      pointer-events: none; /* Prevent interaction with the GIF */
+      opacity: 1; /* Always visible */
+      transition: transform 0.3s steps(5, end); /* Match choppy transition */
+    }
+    .overlay-container:hover img.overlay-gif {
+      transform: scale(1.50); /* Grow GIF along with the image */
+    }
+    .overlay-container img[alt="Color"] {
+      filter: grayscale(100%); /* Display in black and white */
+      transition: filter 0.3s steps(5, end), transform 0.3s steps(5, end); /* Add choppy transition for resizing */
+    }
+    .overlay-container:hover img[alt="Color"] {
+      filter: grayscale(0%); /* Transition to color on hover */
+      transform: scale(1.50); /* Add resizing transition */
+    }
   </style>
   <style type="text/css">
     * {cursor: url(https://cur.cursors-4u.net/symbols/sym-1/sym53.ani), url(https://cur.cursors-4u.net/symbols/sym-1/sym53.png), auto !important;}
@@ -97,13 +126,48 @@
   </div>
   <table>
     <tr>
-      <td><img src="portfolio carousel/fomapan_100_classic_05_19_2024_000281550033.webp" alt="New York" width="300" height="200"></td>
-      <td><img src="portfolio carousel/kentmere_400__000211540033.webp" alt="Florida" width="300" height="200"></td>
-      <td><img src="portfolio carousel/kentmere_400_06_27_2024_000254190010.webp" alt="New Jersey" width="300" height="200"></td>
+      <td>
+        <a href="new_york.html">
+          <div class="overlay-container">
+            <img src="portfolio carousel/fomapan_100_classic_05_19_2024_000281550033.webp" alt="New York" width="300" height="200">
+            <img class="overlay-gif" src="geocities/new york.gif" alt="New York GIF">
+          </div>
+        </a>
+      </td>
+      <td>
+        <a href="florida.html">
+          <div class="overlay-container">
+            <img src="portfolio carousel/kentmere_400__000211540033.webp" alt="Florida" width="300" height="200">
+            <img class="overlay-gif" src="geocities/florida.png" alt="Florida GIF">
+          </div>
+        </a>
+      </td>
+      <td>
+        <a href="new_jersey.html">
+          <div class="overlay-container">
+            <img src="portfolio carousel/kentmere_400_06_27_2024_000254190010.webp" alt="New Jersey" width="300" height="200">
+            <img class="overlay-gif" src="geocities/new jersey.png" alt="New Jersey GIF">
+          </div>
+        </a>
+      </td>
     </tr>
     <tr>
-      <td><img src="portfolio carousel/ilford_delta_3200_professional_05_04_2023_000059230016.webp" alt="Color" width="300" height="200"></td>
-      <td><img src="portfolio carousel/kodak_professional_tri-x_400_07_18_2023_000169010025.webp" alt="Darkroom" width="300" height="200"></td>
+      <td>
+        <a href="color.html">
+          <div class="overlay-container">
+            <img src="color/agfa_vista_03_16_2022_000011200033-medium.webp" alt="Color" width="300" height="200">
+            <img class="overlay-gif" src="geocities/color.gif" alt="Color GIF">
+          </div>
+        </a>
+      </td>
+      <td>
+        <a href="darkroom.html"> <!-- Added link to darkroom.html -->
+          <div class="overlay-container">
+            <img src="darkroom/4.webp" alt="Darkroom" width="300" height="200">
+            <img class="overlay-gif" src="geocities/darkroom.gif" alt="Darkroom GIF">
+          </div>
+        </a>
+      </td>
     </tr>
   </table>
   <div class="footer">

@@ -18,11 +18,13 @@
     }
     h1 {
       color: #FF00FF;
+      text-shadow: 2px 2px 0 yellow, 4px 4px 0 blue; /* 90s text shadow effect */
     }
     .nav {
       background-color: #66CCFF;
       padding: 10px;
       margin-bottom: 20px;
+      border: 4px ridge #FF00FF; /* Classic 90s border */
     }
     .nav a {
       text-decoration: none;
@@ -35,7 +37,7 @@
       border-collapse: collapse;
     }
     td {
-      border: 2px solid #000;
+      border: 5px ridge #00FF00; /* Classic 90s border */
       padding: 5px;
     }
     .footer {
@@ -44,6 +46,7 @@
       padding: 10px;
       margin-top: 20px;
       font-family: 'VT323', monospace;
+      border-top: 4px ridge blue; /* Classic 90s border */
     }
     table td img {
       transition: transform 0.3s steps(5, end); /* choppy transition for retro look */
@@ -106,24 +109,68 @@
       filter: grayscale(0%); /* Transition to color on hover */
       transform: scale(1.50); /* Add resizing transition */
     }
+    /* 90s decorations */
+    .blink {
+      animation: blinker 1s step-end infinite;
+    }
+    @keyframes blinker {
+      50% { opacity: 0; }
+    }
+    .construction {
+      margin: 20px auto;
+    }
+    .divider {
+      margin: 15px auto;
+      height: 20px;
+      background: url('geocities/divider.gif') repeat-x center;
+    }
+    .stars {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      animation: spin 3s linear infinite;
+      z-index: 2;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .guestbook {
+      margin: 15px auto;
+      padding: 5px;
+      background-color: #FFFF99;
+      width: 200px;
+      border: 3px ridge red;
+      font-weight: bold;
+    }
   </style>
   <style type="text/css">
     * {cursor: url(https://cur.cursors-4u.net/symbols/sym-1/sym53.ani), url(https://cur.cursors-4u.net/symbols/sym-1/sym53.png), auto !important;}
   </style>
 </head>
 <body>
-  <audio src="geocities/pbjt.mp3" autoplay></audio>
+  <audio src="geocities/pbjt.mp3" autoplay loop></audio>
   <a href="https://www.cursors-4u.com/cursor/2005/05/30/sym53.html" target="_blank" title="Yin And Yang">
     <img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Yin And Yang" style="position:absolute; top: 0px; right: 0px;" />
   </a>
   <h1>
     <marquee behavior="alternate" scrollamount="15" scrolldelay="150">Dylan Permuy</marquee>
   </h1>
+  
   <div class="nav">
     <a href="index.html"><img src="geocities/home.gif" alt="Home"></a>
     <a href="about.html"><img src="geocities/about.gif" alt="About"></a>
     <a href="mailto:dylan@permuy.me"><img src="geocities/email.gif" alt="Contact" style="height: 40px;"></a>
   </div>
+  
+  <div class="construction">
+    <img src="https://ainab.neocities.org/under-construction-rtl.gif" height="40" alt="Under Construction">
+  </div>
+  
+  <div class="divider"></div>
+  
+  <p class="blink" style="color: red; font-size: 24px; font-weight: bold;">WELCOME TO MY HOME PAGE!!!</p>
+  
   <table>
     <tr>
       <td>
@@ -170,14 +217,29 @@
       </td>
     </tr>
   </table>
-  <div class="footer">
-    &copy; 2025 Dylan Permuy. All rights reserved.
+  
+  <div class="divider"></div>
+  
+  <div class="guestbook">
+    <a href="#">SIGN MY GUESTBOOK!</a>
   </div>
+  
+  <div class="footer">
+    <img src="https://www.fusio.net/app/uploads/2017/12/200.gif" height="40">
+    <img src="https://images.squarespace-cdn.com/content/v1/601baa165d76be323d850cd5/1614887161289-WRXVYZZNQTDHJ1IQO0EC/90s+Best+Viewed+with+Microsoft+Internet+Explorer+-+Rod+Kim.gif" height="40">
+    <br>
+    &copy; 2025 Dylan Permuy. All rights reserved.<br>
+    <span class="blink">This site best viewed in 800x600 resolution</span>
+  </div>
+  
   <!-- Hit Counter -->
   <a href="https://www.hitwebcounter.com" target="_blank">
-    <img src="https://hitwebcounter.com/counter/counter.php?page=19918974&style=0049&nbdigits=5&type=page&initCount=777" title="Counter Widget" Alt="Visit counter For Websites"   border="0" />
+    <img src="https://hitwebcounter.com/counter/counter.php?page=19918974&style=0049&nbdigits=5&type=page&initCount=777" title="Counter Widget" Alt="Visit counter For Websites" border="0" />
   </a>
+  
   <!-- New static image inserted at bottom right -->
-  <img id="static-img" src="geocities/pbjt.gif" alt="Static image">
+  <a href="portfolio.html">
+    <img id="static-img" src="geocities/pbjt.gif" alt="Static image">
+  </a>
 </body>
 </html>

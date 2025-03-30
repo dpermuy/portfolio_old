@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dylan Permuy - Wikipedia</title>
+    <link rel="icon" href="wikipedia.ico" type="image/png">
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #222;
+            background-color: #f6f6f6;
+        }
+        .container {
+            max-width: 1250px;
+            margin: 0 auto;
+            display: flex;
+            background-color: white;
+        }
+        .sidebar {
+            width: 176px;
+            padding: 24px 0.5em 0 0.5em;
+            background-color: #f6f6f6;
+            border-right: 1px solid #a7d7f9;
+        }
+        .sidebar-logo {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .sidebar-logo img {
+            width: 135px;
+        }
+        .sidebar-nav {
+            padding-left: 0;
+            list-style-type: none;
+            font-size: 0.75em;
+        }
+        .sidebar-nav li {
+            padding: 3px 0;
+        }
+        .sidebar-nav h3 {
+            font-weight: normal;
+            color: #4d4d4d;
+            font-size: 12px;
+            margin: 0.5em 0;
+            padding-top: 0.5em;
+            border-top: 1px solid #c8ccd1;
+        }
+        .sidebar-nav a {
+            color: #0645ad;
+            text-decoration: none;
+        }
+        .sidebar-nav a:hover {
+            text-decoration: underline;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 1em 1.5em;
+        }
+        .header-tabs {
+            border-bottom: 1px solid #a7d7f9;
+            display: flex;
+            margin-bottom: 1em;
+            font-size: 0.85em;
+        }
+        .header-tabs ul {
+            display: flex;
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        .header-tabs li {
+            padding: 0.5em 0.7em;
+            background-color: #f8f9fa;
+            border: 1px solid #a7d7f9;
+            border-bottom: none;
+            margin-right: 0.2em;
+            border-radius: 3px 3px 0 0;
+        }
+        .header-tabs li.active {
+            background-color: white;
+            border-bottom: 1px solid white;
+        }
+        .header-tabs li a {
+            color: #0645ad;
+            text-decoration: none;
+        }
+        .header-tabs .talk-tab {
+            margin-left: auto;
+        }
+        .article-header {
+            margin-bottom: 1em;
+            border-bottom: 1px solid #a2a9b1;
+        }
+        h1 {
+            font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
+            margin: 0;
+            padding: 0;
+            font-size: 1.8em;
+            font-weight: normal;
+        }
+        .infobox {
+            float: right;
+            margin: 0 0 1em 1em;
+            border: 1px solid #a2a9b1;
+            background-color: #f8f9fa;
+            width: 270px;
+            font-size: 0.88em;
+        }
+        .infobox-title {
+            background-color: #eaecf0;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 7px;
+        }
+        .infobox-image {
+            text-align: center;
+            padding: 10px;
+        }
+        .infobox-image img {
+            max-width: 220px;
+            height: auto;
+        }
+        .infobox-caption {
+            text-align: center;
+            font-size: 0.9em;
+            padding: 0 5px 5px;
+        }
+        .infobox-data {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .infobox-data th, .infobox-data td {
+            border-top: 1px solid #a2a9b1;
+            padding: 5px 10px;
+            vertical-align: top;
+        }
+        .infobox-data th {
+            text-align: left;
+            width: 33%;
+            background-color: #eaecf0;
+        }
+        .hatnote {
+            font-style: italic;
+            color: #5a5a5a;
+            padding: 5px 0;
+            font-size: 0.9em;
+        }
+        .toc {
+            border: 1px solid #a2a9b1;
+            background-color: #f8f9fa;
+            padding: 7px;
+            display: table;
+            font-size: 0.9em;
+            margin: 1em 0;
+        }
+        .toc-title {
+            text-align: center;
+            font-weight: bold;
+        }
+        .toc ol {
+            counter-reset: item;
+            list-style-type: none;
+            padding-left: 1.5em;
+        }
+        .toc li:before {
+            content: counters(item, ".") " ";
+            counter-increment: item;
+        }
+        h2 {
+            font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
+            font-weight: normal;
+            border-bottom: 1px solid #a2a9b1;
+            font-size: 1.5em;
+            margin-top: 1em;
+            padding-bottom: 3px;
+        }
+        h3 {
+            font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
+            font-weight: normal;
+            font-size: 1.2em;
+            margin-top: 1em;
+        }
+        p {
+            margin: 0.5em 0;
+        }
+        a {
+            color: #0645ad;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .references {
+            font-size: 0.9em;
+        }
+        .reference {
+            vertical-align: super;
+            font-size: 0.8em;
+            color: #0645ad;
+            cursor: pointer;
+        }
+        sup {
+            vertical-align: super;
+            font-size: 0.8em;
+        }
+        .reference-list {
+            font-size: 0.9em;
+        }
+        .reference-list ol {
+            padding-left: 2em;
+        }
+        .categories {
+            border-top: 1px solid #a2a9b1;
+            padding-top: 10px;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+        .categories a {
+            margin-right: 10px;
+        }
+        .footer {
+            font-size: 0.8em;
+            margin-top: 1em;
+            color: #5a5a5a;
+            text-align: center;
+        }
+        .edit-section {
+            font-size: 0.7em;
+            font-weight: normal;
+            margin-left: 1em;
+        }
+        .edit-section a {
+            color: #0645ad;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-logo">
+                <a href="https://www.wikipedia.org/">
+                    <img src="https://en.wikipedia.org/static/images/project-logos/enwiki.png" alt="Wikipedia Logo">
+                </a>
+            </div>
+            <div class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html">Main page</a></li>
+                    <li><a href="portfolio.html">Contents</a></li>
+                    <li><a href="#">Current events</a></li>
+                    <li><a href="#">Random article</a></li>
+                    <li><a href="#">About Wikipedia</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Donate</a></li>
+                </ul>
+                <h3>Contribute</h3>
+                <ul>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Learn to edit</a></li>
+                    <li><a href="#">Community portal</a></li>
+                    <li><a href="#">Recent changes</a></li>
+                    <li><a href="#">Upload file</a></li>
+                </ul>
+                <h3>Tools</h3>
+                <ul>
+                    <li><a href="#">What links here</a></li>
+                    <li><a href="#">Related changes</a></li>
+                    <li><a href="#">Special pages</a></li>
+                    <li><a href="#">Permanent link</a></li>
+                    <li><a href="#">Page information</a></li>
+                    <li><a href="#">Cite this page</a></li>
+                    <li><a href="#">Wikidata item</a></li>
+                </ul>
+                <h3>Print/export</h3>
+                <ul>
+                    <li><a href="#">Download as PDF</a></li>
+                    <li><a href="#">Printable version</a></li>
+                </ul>
+                <h3>Languages</h3>
+                <ul>
+                    <li><a href="#">Español</a></li>
+                    <li><a href="#">Français</a></li>
+                    <li><a href="#">Deutsch</a></li>
+                    <li><a href="#">Italiano</a></li>
+                    <li><a href="#">日本語</a></li>
+                    <li><a href="#">Add links</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="header-tabs">
+                <ul>
+                    <li class="active"><a href="#">Article</a></li>
+                    <li><a href="#">Talk</a></li>
+                </ul>
+                <ul class="talk-tab">
+                    <li><a href="#">Read</a></li>
+                    <li><a href="#">Edit</a></li>
+                    <li><a href="#">View history</a></li>
+                </ul>
+            </div>
+            <div class="article-header">
+                <h1>Dylan Permuy</h1>
+            </div>
+            <div class="hatnote">
+                "For other people named Dylan Permuy, see <a href="#">Dylan Permuy (disambiguation)</a>."
+            </div>
+            <div class="infobox">
+                <div class="infobox-title">Dylan Permuy</div>
+                <div class="infobox-image">
+                    <img src="dyl006.webp" alt="Dylan Permuy">
+                </div>
+                <div class="infobox-caption">
+                    Dylan Permuy in 2024
+                </div>
+                <table class="infobox-data">
+                    <tr>
+                        <th>Born</th>
+                        <td>Dylan Thomas Permuy<br>December 14, 1998<br>Southern New Jersey, U.S.</td>
+                    </tr>
+                    <tr>
+                        <th>Education</th>
+                        <td>Temple University</td>
+                    </tr>
+                    <tr>
+                        <th>Occupation</th>
+                        <td>Photographer, visual artist</td>
+                    </tr>
+                    <tr>
+                        <th>Website</th>
+                        <td><a href="https://dylanpermuy.com">dylanpermuy.com</a></td>
+                    </tr>
+                    <tr>
+                        <th>Instagram</th>
+                        <td><a href="https://www.instagram.com/judgedylan">@Judgedylan</a></td>
+                    </tr>
+                    <tr>
+                        <th>LinkedIn</th>
+                        <td><a href="https://www.linkedin.com/in/dylanpermuy/">in/dylanpermuy</a></td>
+                    </tr>
+                </table>
+            </div>
+            <p><b>Dylan Thomas Permuy</b> (born December 14, 1998) is an American photographer known for his work with black and white film. His career is deeply rooted in the tradition of analog photography, and he has garnered a reputation for his mastery of darkroom printing techniques. Dylan is currently immersed in a personal project that delves into the intricate dynamics of family and identity. This ongoing work questions how familial bonds and environmental factors converge to shape individual identity. The project, characterized by its intimate narrative and reflective imagery, stands as a testament to his belief in the power of photography to document and interrogate the human experience.</p>
+            
+            <div class="toc">
+                <div class="toc-title">Contents</div>
+                <ol>
+                    <li><a href="#early-life">Early life and education</a></li>
+                    <li><a href="#career">Career</a>
+                        <ol>
+                            <li><a href="darkroom.html">Darkroom</a></li>
+                            <li><a href="new_jersey.html">New Jersey</a></li>
+                            <li><a href="florida.html">Florida</a></li>
+                            <li><a href="new_york.html">New York</a></li>
+                            <li><a href="color.html">Color</a></li>
+                        </ol>
+                    </li>
+                    <li><a href="#style">Style and techniques</a></li>
+                    <li><a href="#exhibitions">Major exhibitions</a></li>
+                    <li><a href="#awards">Awards and recognition</a></li>
+                    <li><a href="#personal-life">Personal life</a></li>
+                    <li><a href="#bibliography">Bibliography</a></li>
+                    <li><a href="#references">References</a></li>
+                    <li><a href="#external-links">External links</a></li>
+                </ol>
+            </div>
+
+            <h2 id="early-life">Early life and education <span class="edit-section">[<a href="#">edit</a>]</span></h2>
+            <p>Dylan Permuy was born on December 14, 1998, in South Jersey, to Linda Permuy and Edward Permuy. He received his first camera, a Canon Powershot A540, as a gift from his uncle one birthday.</p>
+            <p>Permuy attended Temple University, where he focused on photography and visual design, before dropping out in 2018. He was living and making work in Philadelphia, PA until moving to New York City in 2021.</p>
+
+            <h2 id="career">Career <span class="edit-section">[<a href="#">edit</a>]</span></h2>
+            
+             
+
+            <h2 id="external-links">External links <span class="edit-section">[<a href="#">edit</a>]</span></h2>
+            <ul>
+                <li>Official website</li>
+                <li>Dylan Permuy at the Museum of Modern Art</li>
+                <li>Interview with Dylan Permuy, <i>PBS Art21</i> (2020)</li>
+                <li>Environmental Photography Foundation</li>
+            </ul>
+
+            <div class="categories">
+                <a href="#">1998 births</a>
+                <a href="#">Living people</a>
+                <a href="#">American photographers</a>
+                <a href="#">Candid photographers</a>
+                <a href="#">Temple University alumni</a>
+                <a href="#">Tyler School of Art alumni</a>
+                <a href="#">People from New Jersey</a>
+                <a href="#">Film lab employees</a>
+            </div>
+
+            <div class="footer">
+                <p>This page was last edited on 29 March 2025, at 23:01 (EST).</p>
+                <p>Text is available under the <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">Creative Commons Attribution-ShareAlike License 3.0</a>; additional terms may apply. By using this site, you agree to the <a href="https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use/en">Terms of Use</a> and <a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="https://foundation.wikimedia.org/wiki/Home">Wikimedia Foundation, Inc.</a>, a non-profit organization.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

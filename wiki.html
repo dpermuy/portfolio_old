@@ -19,6 +19,7 @@
             margin: 0 auto;
             display: flex;
             background-color: white;
+            flex-direction: row;
         }
         .sidebar {
             width: 176px;
@@ -237,9 +238,149 @@
         .edit-section a {
             color: #0645ad;
         }
+        
+        /* Mobile nav elements */
+        .mobile-header {
+            display: none;
+            background-color: #eaecf0;
+            padding: 0.5em;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #c8ccd1;
+        }
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            padding: 8px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+        .mobile-search {
+            display: none;
+            width: 100%;
+            margin: 0.5em 0;
+        }
+        .mobile-search input {
+            width: 85%;
+            padding: 0.5em;
+            border: 1px solid #c8ccd1;
+            border-radius: 3px;
+        }
+        .mobile-search button {
+            width: 12%;
+            padding: 0.5em;
+            border: 1px solid #c8ccd1;
+            background-color: #f8f9fa;
+            border-radius: 3px;
+            margin-left: 0.5em;
+        }
+        .mobile-actions {
+            display: none;
+            border-bottom: 1px solid #c8ccd1;
+            padding-bottom: 0.5em;
+            margin-bottom: 0.5em;
+        }
+        .mobile-actions ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            justify-content: space-around;
+        }
+        .mobile-actions a {
+            color: #0645ad;
+            text-decoration: none;
+            padding: 0.5em;
+            display: block;
+        }
+        
+        /* Media queries for responsive design */
+        @media (max-width: 850px) {
+            .container {
+                flex-direction: column;
+                width: 100%;
+            }
+            .sidebar {
+                display: none;
+                width: 100%;
+                border-right: none;
+                padding: 0.5em;
+            }
+            .main-content {
+                padding: 0.8em;
+                width: auto;
+            }
+            .infobox {
+                float: none;
+                width: 100%;
+                margin: 1em 0;
+            }
+            .mobile-header {
+                display: block;
+            }
+            .mobile-nav-toggle {
+                display: inline-block;
+            }
+            .mobile-search, .mobile-actions {
+                display: block;
+            }
+            .header-tabs {
+                font-size: 0.75em;
+            }
+            .header-tabs li {
+                padding: 0.4em 0.5em;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            .toc {
+                width: 100%;
+                box-sizing: border-box;
+            }
+            /* Make the sidebar toggleable on mobile */
+            .sidebar.show {
+                display: block;
+            }
+        }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Setup mobile menu toggle
+            const mobileToggle = document.getElementById('mobile-nav-toggle');
+            const sidebar = document.querySelector('.sidebar');
+            
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', function() {
+                    sidebar.classList.toggle('show');
+                });
+            }
+        });
+    </script>
 </head>
 <body>
+    <!-- Add mobile header -->
+    <div class="mobile-header">
+        <button id="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
+        <img src="https://en.wikipedia.org/static/images/mobile/copyright/wikipedia-wordmark-en.svg" alt="Wikipedia" height="18">
+        
+        <div class="mobile-search">
+            <input type="search" placeholder="Search Wikipedia">
+            <button>🔍</button>
+        </div>
+        
+        <div class="mobile-actions">
+            <ul>
+                <li><a href="#">Article</a></li>
+                <li><a href="#">Talk</a></li>
+                <li><a href="#">Read</a></li>
+                <li><a href="#">Edit</a></li>
+                <li><a href="#">History</a></li>
+            </ul>
+        </div>
+    </div>
+    
     <div class="container">
         <div class="sidebar">
             <div class="sidebar-logo">

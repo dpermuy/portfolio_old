@@ -22,4 +22,4 @@
            /      ###/                                    
 
 
-edit: 3/10/2025-- building with vscode (hyperfresh), chat gpt-4o, copilot, pushing updates through git in vscode
+edit: 3/10/2025-- 
